@@ -29,10 +29,15 @@
     <iframe id="weather" class="iframe" src="https://gadgets.buienradar.nl/gadget/zoommap/?lat=52.09083&lng=5.12222&overname=2&zoom=8&naam=Utrecht&size=3&voor=1" scrolling=no width=550 height=512 frameborder=no></iframe>
 
     <script>
-        const refreshTimer = setInterval(weatherRefresh, 1000*60*30);
+        const SEC_IN_MILLISEC = 1000;
+        const MINUTE_IN_SEC = 60;
+        const REFRESH_IN_MIN = 15;
+        const reloadHandler = setInterval(pageReload, SEC_IN_MILLISEC*MINUTE_IN_SEC*REFRESH_IN_MIN);
 
-        function weatherRefresh() {
-            document.getElementById('weather').contentWindow.location.reload();
+        function pageReload() {
+            const now = new Date();
+            console.log(`${now} - weatherRefresh`);
+            location.reload();
         }
     </script>
 </body>
