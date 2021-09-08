@@ -19,13 +19,15 @@
 				<section>
 					<h2 class="r-fit-text">Innovation Lab Agenda</h2>
 
+					<br><br><br><br><br><br>
+					
 					<iframe 
 						id="agenda" 
 						class="r-strecht" 
 						src="https://calendar.google.com/calendar/b/1/embed?height=600&amp;wkst=7&amp;bgcolor=%23ffffff&amp;ctz=Europe%2FAmsterdam&amp;src=aHUubmxfbW9pMmxzZ29jbzI5aTNjcG9kZnVoYnBsNjRAZ3JvdXAuY2FsZW5kYXIuZ29vZ2xlLmNvbQ&amp;color=%23A79B8E&amp;mode=WEEK&amp;showTitle=0&amp;showNav=0&amp;showDate=0&amp;showPrint=0&amp;showTabs=0&amp;showCalendars=0&amp;showTz=0" 
-						style="border-width:0" 
+						style="border-width:0; transform: scale(1.4);" 
 						width="1000" 
-						height="1000" 
+						height="1100" 
 						frameborder="0" 
 						scrolling="no">
 					</iframe>		
@@ -33,15 +35,31 @@
 
 				<section>
 					<h2 class="r-fit-text">Buienradar</h2>
+					<br><br><br><br><br><br><br><br>
 
 					<iframe 
-						id="weather" 
-						class="r-stretch" 
-						src="https://gadgets.buienradar.nl/gadget/zoommap/?lat=52.09083&lng=5.12222&overname=2&zoom=8&naam=Utrecht&size=3&voor=1" 
+						src="https://gadgets.buienradar.nl/gadget/zoommap/?lat=52.09083&lng=5.12222&overname=2&zoom=11&naam=Utrecht&size=3&voor=1" 
 						scrolling=no 
-						width=500 
+						width=550 
 						height=512 
-						frameborder=no>
+						frameborder=no
+						style="transform: scale(2)">
+					</iframe>
+
+					<br><br><br><br><br><br><br><br>
+
+					<iframe 
+						src="//gadgets.buienradar.nl/gadget/forecastandstation/6260" 
+						noresize 
+						scrolling=NO 
+						hspace=0 
+						vspace=0 
+						frameborder=0 
+						maginheight=0 
+						marginwidth=0 
+						width=300 
+						height=190
+						style="transform: scale(2);">
 					</iframe>
 				</section>
 			</div>
@@ -56,13 +74,16 @@
 			// - https://revealjs.com/initialization/
 			// - https://revealjs.com/config/
 			Reveal.initialize({
-				autoSlide: 10000,
-				loop: true,
-				hash: true,
-				controls: false,
 				width: 1080,
 				height: 1920,
+				center: false,
 
+				autoSlide: 10000,
+				loop: true,
+
+				hash: true,
+				controls: false,
+			
 				// Learn about plugins: https://revealjs.com/plugins/
 				plugins: [ RevealMarkdown, RevealHighlight, RevealNotes ]
 			});
