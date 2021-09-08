@@ -17,10 +17,11 @@
 		<div class="reveal">
 			<div class="slides">
 				<section>
-					<h1>Innovation Lab Agenda</h1>
+					<h2 class="r-fit-text">Innovation Lab Agenda</h2>
+
 					<iframe 
 						id="agenda" 
-						class="iframe" 
+						class="r-strecht" 
 						src="https://calendar.google.com/calendar/b/1/embed?height=600&amp;wkst=7&amp;bgcolor=%23ffffff&amp;ctz=Europe%2FAmsterdam&amp;src=aHUubmxfbW9pMmxzZ29jbzI5aTNjcG9kZnVoYnBsNjRAZ3JvdXAuY2FsZW5kYXIuZ29vZ2xlLmNvbQ&amp;color=%23A79B8E&amp;mode=WEEK&amp;showTitle=0&amp;showNav=0&amp;showDate=0&amp;showPrint=0&amp;showTabs=0&amp;showCalendars=0&amp;showTz=0" 
 						style="border-width:0" 
 						width="1000" 
@@ -29,15 +30,17 @@
 						scrolling="no">
 					</iframe>		
 				</section>
+
 				<section>
-					<h1>Buienradar</h1>
+					<h2 class="r-fit-text">Buienradar</h2>
+
 					<iframe 
 						id="weather" 
-						class="iframe" 
+						class="r-stretch" 
 						src="https://gadgets.buienradar.nl/gadget/zoommap/?lat=52.09083&lng=5.12222&overname=2&zoom=8&naam=Utrecht&size=3&voor=1" 
 						scrolling=no 
-						width=1100 
-						height=1024 
+						width=500 
+						height=512 
 						frameborder=no>
 					</iframe>
 				</section>
@@ -53,9 +56,12 @@
 			// - https://revealjs.com/initialization/
 			// - https://revealjs.com/config/
 			Reveal.initialize({
-				autoSlide: 5000,
+				autoSlide: 10000,
 				loop: true,
 				hash: true,
+				controls: false,
+				width: 1080,
+				height: 1920,
 
 				// Learn about plugins: https://revealjs.com/plugins/
 				plugins: [ RevealMarkdown, RevealHighlight, RevealNotes ]
