@@ -34,6 +34,11 @@
 				</section>
 
 				<section>
+					<h2 class="r-fit-text">AI IPASS Projecten</h2>
+					<span class="ipass"></span>
+				</section>
+
+				<section>
 					<h2 class="r-fit-text">Buienradar</h2>
 					<br><br><br><br><br><br><br><br>
 
@@ -62,6 +67,11 @@
 						style="transform: scale(1.5);">
 					</iframe>
 				</section>
+
+				<section>
+					<h2 class="r-fit-text">AI IPASS Projecten</h2>
+					<span class="ipass"></span>
+				</section>
 			</div>
 		</div>
 
@@ -69,10 +79,12 @@
 		<script src="plugin/notes/notes.js"></script>
 		<script src="plugin/markdown/markdown.js"></script>
 		<script src="plugin/highlight/highlight.js"></script>
+		
 		<script>
 			// More info about initialization & config:
 			// - https://revealjs.com/initialization/
 			// - https://revealjs.com/config/
+
 			Reveal.initialize({
 				width: 1080,
 				height: 1920,
@@ -83,9 +95,24 @@
 
 				hash: true,
 				controls: false,
-			
+
 				// Learn about plugins: https://revealjs.com/plugins/
-				plugins: [ RevealMarkdown, RevealHighlight, RevealNotes ]
+				plugins: [ RevealMarkdown, RevealHighlight, RevealNotes]
+			});
+
+			Reveal.on('slidechanged', event => {
+				const ipass = event.currentSlide.querySelector('.ipass');
+				if (ipass) {
+					fetch('/ai-ipass.json')
+						.then((request) => request.json())
+						.then((data) => {
+							randomProject = Math.floor(Math.random()*data.studiejaar2020.length);
+							ipass.innerHTML = `
+								<img src="${data.studiejaar2020[randomProject].image}">
+								<figcaption>${data.studiejaar2020[randomProject].caption} door 
+								<a href="mailto:${data.studiejaar2020[randomProject].email}">${data.studiejaar2020[randomProject].student}</a></figcaption>`;
+						});
+				} 
 			});
 		</script>
 	</body>
