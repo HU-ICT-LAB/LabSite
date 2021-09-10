@@ -103,7 +103,8 @@
 			Reveal.on('slidechanged', event => {
 				const ipass = event.currentSlide.querySelector('.ipass');
 				if (ipass) {
-					fetch('/ai-ipass.json')
+					const ipassDataUrl = 'https://hu-ict-lab.github.io/LabSite/ai-ipass.json';
+					fetch(ipassDataUrl)
 						.then((request) => request.json())
 						.then((data) => {
 							randomProject = Math.floor(Math.random()*data.studiejaar2020.length);
