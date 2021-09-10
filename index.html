@@ -103,15 +103,17 @@
 			Reveal.on('slidechanged', event => {
 				const ipass = event.currentSlide.querySelector('.ipass');
 				if (ipass) {
-					const ipassDataUrl = 'https://hu-ict-lab.github.io/LabSite/ai-ipass.json';
+					// const ipassDataUrl = 'https://hu-ict-lab.github.io/LabSite/ai-ipass.json';
+					const ipassDataUrl = 'https://raw.githubusercontent.com/tijmenjoppe/IPASS-AI/main/ipass-ai.json'
 					fetch(ipassDataUrl)
 						.then((request) => request.json())
 						.then((data) => {
-							randomProject = Math.floor(Math.random()*data.studiejaar2020.length);
+							randomProject = Math.floor(Math.random()*data["ipass-ai"].length);
 							ipass.innerHTML = `
-								<img src="${data.studiejaar2020[randomProject].image}">
-								<figcaption>${data.studiejaar2020[randomProject].caption} door 
-								<a href="mailto:${data.studiejaar2020[randomProject].email}">${data.studiejaar2020[randomProject].student}</a></figcaption>`;
+								<img src="${data["ipass-ai"][randomProject].image}">
+								<figcaption>${data["ipass-ai"][randomProject].caption} door 
+								<a href="mailto:${data["ipass-ai"][randomProject].email}">${data["ipass-ai"][randomProject].student}</a>
+								<span style="font-style: italic; font-size: 60%">(IPASS ${data["ipass-ai"][randomProject].year})</span></figcaption>`;
 						});
 				} 
 			});
